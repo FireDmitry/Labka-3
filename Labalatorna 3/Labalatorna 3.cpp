@@ -10,28 +10,32 @@ using namespace std;
 
 int main()
 {
-    double x, y, z; //Оголошення зміних типу double(дробові)
+    int x, y, z; //Оголошення зміних типу double(дробові)
     char action;
 	cout << "input x:" << endl;
     cin >> x;
     cout << "input y:" << endl;
     cin >> y;
-    cout << "input action: (+) (-) (*) (/)"<<endl;
+    cout << "input action: (+) (-) (*) (/) (%)"<<endl;
     cin >> action;
 
 	switch (action) /* switch має робити значення, а кожен case перевіряє це значення на відповідність*/
 	{
 	case '+':
-		std::cout << x+y;
+		cout << x+y;
 		break;
 	case '-':
-		std::cout << x-y;
+		cout << x-y;
 		break;
 	case '*':
-		std::cout << x*y;
+		cout << x*y;
+		break;
+	case '%':
+		cout << x%y;
 		break;
 	case '/':
-		std::cout << x/y;
+		if (y != 0)cout << x / y; //якщо "y" не дорівнює 0, то виконується дія / - ділення, в іншому випадку (else) виділяється текст: Не можна ділити на 0
+		else cout << " Don't devided by 0!";
 		break;
 	default: //жоден кейс не виконався
 		cout << "wrong action";
